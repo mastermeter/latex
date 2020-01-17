@@ -1,0 +1,177 @@
+% !TeX spellcheck = fr_FR
+\documentclass[12pt,a4paper]{report}
+\usepackage{style/preambule_college}
+\usepackage{style/preambule_personnalisation}
+\usepackage{geometry}
+\usepackage{amsmath}
+\chapterFormat
+
+\begin{document}
+	\chapter[Géométrie dans l'espace]{Positions relatives entre 2 droites. Positions relatives entre 2 plans}
+	\subsection*{Droites}
+	\pagebreak
+	\subsubsection*{Définition}
+	Soit 2 droites $d_1$ et $d_2$ et les points $D_1$ et $D_2$ tel que: \[D_1 \in d_1 et D_2 \in d_2\] 
+	\subsubsection*{Gauche}
+	Si les vecteur $\overrightarrow{d_1}$,$\overrightarrow{d_2}$ et $\overrightarrow{D_1D_2}$ sont coplanaires $\Leftrightarrow$ 
+	\begin{gather}
+	\begin{vmatrix} 
+	d_{1x} & d_2 & D_1D_2 \\ 
+	d_{1y} & d_2 & D_1D_2 \\
+	d_{1z} & d_2 & D_1D_2 
+	\end{vmatrix}
+	=0
+	\end{gather}	
+	Alors les droites sont coplanaires et donc cela élimine le cas : gauches.
+	Si le résultats n'est pas 0, alors les droites sont gauches et on mesure en général la distance entre ces 2 droites: $ \delta(d_1;d_2) $ par $\dfrac{\mid (\overrightarrow{d_1} \times \overrightarrow{d_2})\cdot \overrightarrow{D_1D_2} \mid}{||\overleftrightarrow{d_1} \times \overrightarrow{d_2}||}$
+	\subsubsection*{Sécante}
+	Donc, nous avons obtenu le résultat que $d_1$ \& $d_2$ sont coplanaires. Le prochain calcul est de voir si $d_1$ \&  $d_2$ sont colinéaires: \[ d_1=kd_2 \] 
+	si on montre que $\nexists k, d_1=kd_2$ alors les droites sont sécantes et on peut trouver le point d'intersection I et l'angles entre $d_1$ \& $d_2$.
+	\subsubsection*{Parallèle ou Confondue}
+	
+	Si un $k$ existe alors les droites sont au moins parallèles. Si en plus le point d'ancrage d'une droite appartient aussi à l'autre droite alors les droites sont confondues sinon les droites sont parallèles et on peut calculer la distance entre ces 2 droites.
+	
+	
+	\subsubsection*{Exemples}
+	\textbf{Droites gauches:}
+	
+	$a=\left\{
+	\begin{array}{l}
+	x=k+3 \\
+	y=3-2k \\
+	z=-1-2k
+	\end{array}
+	\right.$ 	
+		$b=\left\{
+	\begin{array}{l}
+	x=t-2 \\
+	y=t-3 \\
+	z=2-3t
+	\end{array}
+	\right.$
+	
+		\begin{gather}
+	\begin{vmatrix} 
+	1 & 1 & -2-3 \\ 
+	-2 & 1 & (-3-3) \\
+	-3 & -3 & (2-(-1))
+	\end{vmatrix}
+	\neq 0 
+	\end{gather}
+	
+	\pagebreak
+	
+	\textbf{Droites sécantes}
+	
+		$a=\left\{
+	\begin{array}{l}
+	x=-2k \\
+	y=3+5k \\
+	z=-1+2k
+	\end{array}
+	\right.$
+		$a=\left\{
+	\begin{array}{l}
+	x= 4t+4 \\
+	y=1-2t \\
+	z=t
+	\end{array}
+	\right.$  
+	
+	\begin{gather}
+	\begin{vmatrix} 
+	-2 & 4 & (0-4) \\ 
+	5 & -2 & (3-1) \\
+	2 & 1 & (1-0)
+	\end{vmatrix}
+	= 0 
+	\end{gather}
+	
+	Les coefficients $k$ et $t$ ne sont pas proportionnel entre eux $\Leftrightarrow$ droites sécantes.
+	
+	\bigskip
+	
+	\textbf{Droites parallèles}
+	
+		$a=\left\{
+	\begin{array}{l}
+	x=6-2k \\
+	y=3+5k \\
+	z=-1-k
+	\end{array}
+	\right.$
+		$b=\left\{
+	\begin{array}{l}
+	x=4t-1 \\
+	y=1-10t \\
+	z=2+2t
+	\end{array}
+	\right.$
+	
+	On va passer sur le fait que ces droites sont coplanaires.
+	
+	Les paramètres $k$ et $t$ sont cette fois ci proportionnels: $t=-2k$ mais le point $A(6;3;-1)$ (d'ancrage de la droite a) $\notin b$ 
+	
+		$a=\left\{
+	\begin{array}{l}
+	x=6+2k \\
+	y=-1-k \\
+	z=3+k
+	\end{array}
+	\right.$
+		$b=\left\{
+	\begin{array}{l}
+	x=6t \\
+	y=2-3t \\
+	z=3t
+	\end{array}
+	\right.$
+	
+	\bigskip
+	
+	\textbf{Droites confondues}
+	
+	Le déterminant est = 0, $k=\frac{1}{3}t$ et ici, en particulier, le point $A(6;.1;3) \in b$ 
+	
+	$\left\{
+	\begin{array}{l}
+	6=6t \Leftrightarrow t=1 \\
+	-1=2-3t \Leftrightarrow t=1  \\
+	3=-3t \Leftrightarrow t=1
+	\end{array}
+	\right.$
+	
+	\pagebreak
+	
+	\section*{Plan}
+	
+	\pagebreak
+	
+	
+	Soit 2 plans: \[ \pi_1:a_1x+b_1y+c_1z+d_1=0 \] et \[ \pi_2: a_2x+b_2y+c_2z+d_2=0 \]
+	
+	3 cas sont possibles: Sécants (délimitant une droite), strictement parallèles et confondues
+	
+	$\left\{
+	\begin{array}{l}
+	a_1=\lambda a_2 \\
+	b_1=\lambda b_2 \\
+	c_1=\lambda c_2
+	\end{array}
+	\right.$
+	Alors les droites sont au minimum parallèles, dans le cas contraire elles sont sécantes.
+	
+	Si la première condition est vérifiée et que $d_1=\lambda d_2$ Alors les plans sont confondus.
+	
+	\subsection*{Exemples}
+	$3x-2y+4z-2=0$ et $4x+2y-5z+1=0$ sont sécants (On peut calculer l'angles de ces 2 droites et la droite d'intersection)
+	
+	\smallskip 
+	$x-y+z-1=0$ et $2x-2y+2z-5=0$ sont strictement parallèles (on peut calculer la distance entre ces 2 droites)
+	
+	\smallskip
+	$3x-4y+z-5=0$ et $12x-16y+4z-20=0$ sont confondues
+	
+	
+	
+\end{document}

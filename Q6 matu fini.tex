@@ -1,0 +1,47 @@
+% !TeX spellcheck = fr_FR
+\documentclass[12pt,a4paper]{report}
+\usepackage{style/preambule_college}
+\usepackage{style/preambule_personnalisation}
+\usepackage{geometry}
+\usepackage{amsmath}
+\chapterFormat
+
+\begin{document}
+	\chapter[Analyse]{Théorème de la moyenne et Théorème fondamental du calcul intégral}
+	\section*{Théorème de la moyenne}
+	
+	Le nombre $\mu=\dfrac{1}{b-a} \displaystyle \int_{a}^{b}f(x)dx$ est la valeur moyenne de la fonction f sur l'intervalle[a;b].
+	\section*{Théorème fondamental du calcul intégral}
+	\subsubsection*{Enoncé}
+	Si $f$ est une fonction continue sur [a;b], alors la fonction $F$ définie pour tout $x \in$ [a;b] par \[F(x)=\int_{a}^{x}f(t)dt \]
+	\subsubsection*{Démonstration}
+	Pour une fonction $f(t)$, on défini la fonction $F(x)$ tel que
+	\[F(x)=\int_{a}^{x}f(t)dt\]
+	Pour 2 nombres quelconque $x_1$ et $x_1 + \Delta x$ dans $[a,b]$, nous avons:
+	\[F(x_1)=\int_{a}^{x_1}f(t)dt\]
+	et
+	\[F(x_1+\Delta x)=\int_{a}^{x_1 + \Delta x}f(t)dt\]
+	En soustrayant les 2 égalités on obtient
+	\[F(x_1+\Delta x) - F(x_1) = \int_{a}^{x_1 + \Delta x}f(t)dt - \int_{a}^{x}f(t)dt \qquad (1)\]
+	Par les propriétés des intégrales, nous pouvons montrer que
+	\[\int_{a}^{x_1}f(t)dt+\int_{x_1}^{x_1+\Delta x}f(t)dt=\int_{a}^{x_1+\Delta x}f(t)dt\]
+	Qui peut être arrangée comme ceci
+	\[\int_{a}^{x_1+\Delta x}f(t)dt-\int_{a}^{x_1}f(t)dt=\int_{x_1}^{x_1+\Delta x}f(t)dt\]
+	En substituant l'équation $(1)$, nous obtenons
+	\[F(x_1+\Delta x) - F(x_1)=\int_{x_1}^{x_1+\Delta x}f(t)dt \qquad (2)\]
+	Par le théorème de la moyenne énoncé précédemment: $\exists c \in [x_1,x_1+\Delta y]$ tel que
+	\[\int_{x_1}^{x_1+\Delta x}f(t)dt=f(c)\Delta x\]
+	Par $(2)$, nous pouvons déduire
+	\[F(x_1+\Delta x) - F(x_1)=f(c)\Delta x\]
+	En divisant des 2 cotés par $\Delta x$ puis en prenant la limite de $\Delta x \rightarrow 0$, l'expression devient celle d'une dérivée
+	\[\lim_{\Delta x \rightarrow 0}\dfrac{F(x_1+\Delta x) - F(x_1)}{\Delta x}=\lim_{\Delta x \rightarrow 0}f(c)\]
+	Comme $\Delta x \rightarrow 0$ et $c\in[x_1,x_1 \Delta x]$ alors $x_1\leq c\leq x_1$, donc
+	\[F'(x_1)=f(x_1) \] CQFD
+	\section*{Corollaire}
+	\subsection*{Enoncé}
+	Si $F$ est une primitive de f sur [a;b], alors: \[\int_{a}^{b} f(x)dx=F(b)-F(a)\]
+	\subsection*{Démonstration}
+	\[ \int_{a}^{x}f(t)dt=F(x)+C \]
+	Posons x=a
+	\[ \int_{x}^{x}f(t)dt=F(a)+C\] \[\Leftrightarrow 0=F(a)+C \] \[ \Leftrightarrow C=-F(a) \enskip (1) \] \[ \Leftrightarrow \int_{a}^{x}f(t)dt=F(x)-F(a) \]
+\end{document}

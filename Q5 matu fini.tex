@@ -1,0 +1,97 @@
+% !TeX spellcheck = fr_FR
+\documentclass[12pt,a4paper]{report}
+\usepackage{style/preambule_college}
+\usepackage{style/preambule_personnalisation}
+\usepackage{geometry}
+\usepackage{amsmath}
+\chapterFormat
+
+\begin{document}
+	\chapter[Analyse]{Primitive et méthode d'intégration}
+	\section*{Primitive}
+	\subsection*{Définition}
+	Soit une fonction $f$ définie de $I \subset \mathbb{R}$ dans $\mathbb{R}$. Une fonction $F$ est appelée primitive de $f$ sur I si $F$ est dérivable sur $I$ et si elle admet $f$ comme dérivée:\[\forall x \in I,F^{'}(x)=f(x) \]
+	\subsection*{Propriété}
+	Si $F$ est une primitive de $f$ sur $I$ et $C$ une fonction constante, alors $F+C$ est une primitive de $f$ sur $I$. (1)
+	
+	Si $F$ et $G$ sont 2 primitives de $f$ sur $I$, alors $F-G$ est une fonction constante. (2)
+	
+	(1) Nous avons $(F+C)^{'}=F^{'}+C^{'}=f+0=f$
+	
+	(2) Soit une fonction $k(x)=F(x)-G(x)$.
+	
+		Nous avons: $\forall x \in I,k^{'}(x)=F^{'}(x)-G^{'}(x)=f(x)-f(x)=0$
+		
+		Par corollaire des accroissements finis, la fonction $k=F-G$ est une fonction constante.
+		
+		
+	Soient $F$ une primitive de $f$, $G$ une primitive de $g$ et $\lambda$ un nombre réel.
+	
+	\hspace{1cm} $F+G$ est une primitive de $f+g$
+	
+	\hspace{1cm} $\lambda F$ est une primitive de $\lambda f$
+	
+	\hspace{1cm} $G \circ F$ est une primitive de $(g \circ F)\cdot f$	
+	
+	
+	\subsection{Notation}
+	La notation $\int f(x)dx=F(x)+c$, où $F^{'}(x)=f(x)$ et $c$ est une constante, désigne la famille des primitives de $f$ dans l'intervalle $I$.
+	
+	\subsection*{Méthode d'intégration}
+	
+	Nous avons vu 4 méthodes d'intégration:
+	\begin{enumerate}
+		\item L'intégration directe
+		\item L'intégration par substitution
+		\item L'intégration par élément simple
+		\item L'intégration par partie
+	\end{enumerate}
+	\subsubsection*{Directe}
+	Il s'agit ici d'intégrer une fonction directement sans l'aide d'une technique particulières. Une liste d'intégrale de base peut nous aider (FT):\[\int x^n dx=\dfrac{x^{n+1}}{n+1} +C\]
+	\subsection*{Substitution}
+	Il s'agit ici de remplacer une partie de la fonction par une variable que nous allons appeler $t$:\[\int xe^{1-x^2}dx\]
+	
+	Nous allons, dans ce cas, remplacer $1-x^2$ par $t$, ce qui donne:
+	
+	\medskip
+	$t=1-x^2$
+	
+	$dt=-2xdx \Leftrightarrow dx=\dfrac{dt}{-2x}$
+	\smallskip
+	
+	Ce qui donne \[\int xe^t \frac{dt}{-2x} \Leftrightarrow \int \frac{e^t}{-2}dt = \frac{-1}{2}e^t \Leftrightarrow \frac{-1}{2}e^{1-x^2} \]
+	
+	\subsection{Elément simple}
+	
+	Soit: \[ \int \dfrac{x^5-6}{x^2+2x+1}dx \] Après une division euclidienne, le calcul devient \[\int x^3-2x^2+3x-4 + \dfrac{5x-2}{x^2+2x+1}dx\]
+	Puis, puisque l'intégrale d'une somme $\Leftrightarrow$ la somme d'intégrale, l'expression devient: \[ \int x^3-2x^2+3x-4 dx + \int \dfrac{5x-2}{x^2+2x+1}dx \]
+ 	Nous pouvons laissez la partie de gauche de côté et regarder la partie de droite nous allons chercher à factoriser le dénominateur: \[x^2+2x+1 \Leftrightarrow (x+1)^2 \]
+ 	Nous allons donc remplacer le dénominateur par 2 fractions dont les dénominateurs sont les parties de la factorisation, ainsi, cela devient:
+ 	\[ \int \dfrac{A}{x+1}+\dfrac{B}{(x+1)^2}dx \]
+ 	Après avoir mis sous le même dénominateur pour retourner à la forme précédente:
+ 	\[\int \dfrac{A(x+1)+B}{(x+1)^2} \] 
+ 	Du coup, on arrive devoir résoudre:
+ 	\[\left\{
+ 	\begin{array}{l}
+ 	 A=5 \\
+ 	 A+B=-2 \\
+ 	\end{array}
+ 	\right. \]
+ 	L'intégrale devient finalement: \[ \int x^3-2x^2+3x-4dx \int \dfrac{5}{x+1}- \dfrac{7}{(x+1)^2}dx \]
+ 	\subsection*{Partie}
+ 	Soit $f$ et $g$ 2 fonctions dérivables sur un interval $I$, alors $(fg)^{'}=f^{'}g+fg^{'}$.
+ 	En appliquant l'intégrale des 2 cotés on obtient: \[fg= \int f'g + fg' \]
+ 	En arrangeant les termes on peut dégager: \[ \int f'g= fg-\int fg' \]
+ 	
+ 	
+ 	Soit la fonction: $ x^2\cos(x)$
+ 	
+ 	L'intégrale: $ \int x^2\cos(x)dx$
+ 	\smallskip
+ 	
+ 	Avec la méthode par partie cela donne: \[ \int x^2\cos(x)dx=x^2sin(x) - \int \sin(x)2x \]
+ 	Ici, $f'=\cos(x)$ donc $f=\sin(x)$ et $g=x^2$ donc $g'=2x$
+ 	
+ 	Et on répète le processus encore une fois pour arriver à: \[ \int x^2\cos(x)dx=x^2\sin(x)+2x\cos(x)-2\sin(x) + C \]
+	
+\end{document}

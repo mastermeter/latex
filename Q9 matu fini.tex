@@ -1,0 +1,74 @@
+% !TeX spellcheck = fr_FR
+\documentclass[12pt,a4paper]{report}
+\usepackage{style/preambule_college}
+\usepackage{style/preambule_personnalisation}
+\usepackage{geometry}
+\usepackage{amsmath}
+\chapterFormat
+\begin{document}
+
+	\chapter[Géométrie dans l'espace]{Equation d'une droite. Equation d'un plan. Position relative d'un plan et d'une droite}
+	\section*{Droite}
+	\vspace*{10cm}
+	\subsection*{Equation}
+	\subsubsection*{Géométrique}
+	$\overrightarrow{OP}=\overrightarrow{OA}+\lambda \overrightarrow{d}$
+	\subsubsection*{Paramétrique}
+	$\left\{
+	\begin{array}{l}
+	x=a_1 + \lambda d_1 \\
+	y=a_2 + \lambda d_2 \\
+	z=a_3 + \lambda d_3
+	\end{array}
+	\right.$
+	\subsubsection{Cartésienne}
+	$\dfrac{x-a_1}{d_1}=\dfrac{y-a_2}{d_2}=\dfrac{z-a_3}{d_3}$
+	\pagebreak
+	\section*{Plan}
+	\vspace{10cm}
+	\subsection*{Equation}
+	\subsubsection*{Géométrique}
+	$\overrightarrow{OP}=\overrightarrow{OA} + \lambda \overrightarrow{u} + \mu \overrightarrow{v}$,$\lambda,\mu \in \mathbb{R}$
+	\subsubsection*{Paramétrique}
+	$\left\{
+	\begin{array}{l}
+	x=a_1 + \lambda u_1 + \mu v_1 \\
+	y=a_2 + \lambda u_2 + \mu v_2 \\
+	z=a_3 + \lambda u_3 + \mu v_3
+	\end{array}
+	\right.$
+	\subsubsection*{Cartésienne}
+	$ ax+by+cz+d=0 $
+	\pagebreak
+	\section*{Position relative d'une droite et d'un plan}
+	Soit un plan $\pi:ax+by+cz+d=0$ et la droite $d=\left\{
+	\begin{array}{l}
+		x=a_1 + kd_1 \\
+		y=a_2 + kd_2 \\
+		z=a_3 + kd_3
+	\end{array}
+	\right.$
+	
+	3 cas possibles: sécant, parallèles, confondus
+	
+	\subsection*{Substitution de l'équation de la droite dans le plan}
+	En substituant $x$ par $ a_1 + kd_1 $ puis $y$ par $a_2 +  kd_2$ puis $z$ par $a_3 + kd_3$
+	et en simplifiant l'expression pour sortir une valeur pour k: si $k=$ cst alors la droite et le plan sont sécants, si le résultat est impossible (plus de k et on arrive à une égalité $5=2$) alors la droite est strictement parallèle au plan et si le résultat admet une infinité de possibilité ($5=5$) alors la droite est confondue au plan.
+	
+	\subsection*{Sécant}
+	Lorsque la droite coupe le plan, il est intéressant de voir quel est ce point (par le calcul fait précédemment) et quel est l'angles entre le plan et la droite.
+	Pour cela, il faut nécessairement passer par le calcul d'angle entre 2 droites. On utilise alors le vecteur normal au plan $\overrightarrow{n}=
+	\left( \begin{array}{c}
+		a \\
+		b \\
+		c
+	\end{array} \right)$
+	et on utilise le calcul de l'angle entre 2 vecteurs directeurs $\cos(\phi)= \dfrac{\mid \overrightarrow{d} \cdot \overrightarrow{n} \mid}{\|\overrightarrow{d}\|\|\overrightarrow{n}\|}$
+	Cependant, ce calcul nous donnes l'angles entre les droite $n$ et $d$ il faut prendre le complémentaire de cet angles et donc l'angles entre la droite et le plan est: $\phi= 90°- \arccos \left(\dfrac{\mid \overrightarrow{d} \cdot \overrightarrow{n} \mid}{\|\overrightarrow{d}\|\|\overrightarrow{n}\|}\right)$
+	
+	\subsection*{Strictement parallèle}
+	Dans le cas où la droite est strictement parallèle au plan, donc que le calcul précédent a donné un valeur impossible. On peut regarder la distance de cette droite au plan. En utilisant le même calcul pour la distance d'un point à un plan. $\delta(d;\pi)\Leftrightarrow\delta(P;\pi)$ pour $P \in d$ \[ \delta(P;\pi) = \dfrac{\mid \overrightarrow{AP}\cdot \overrightarrow{n}\mid}{\|\overrightarrow{n}\|} = \dfrac{\mid ax_P + by_P + cz_P + d \mid}{\sqrt{a^2+b^2+c^2}} \] $A \in \pi$ 
+	\subsection*{Confondue}
+	Il n'y a rien d'intéressant à voir dans ce cas.
+	
+\end{document}

@@ -1,0 +1,39 @@
+% !TeX spellcheck = fr_FR
+\documentclass[12pt,a4paper]{report}
+\usepackage{style/preambule_college}
+\usepackage{style/preambule_personnalisation}
+\usepackage{geometry}
+\usepackage{amsmath}
+\chapterFormat
+
+
+\begin{document}
+	\chapter[Géométrie dans l'espace]{Sphère:définition, équation cartésienne. Equation d'un plan tangent à une sphère}
+	\section*{Définition de la sphère}
+	Une première définition que l'on peut donner de la sphère est: tous les point à équidistance d'un seul et point (que l'on va appeler C le centre du cercle). La sphère se définie donc par sont centre $C(x,y,z)$ et un rayon r. La lettre pour signifier une sphère est $\Sigma$.
+	\vspace{10cm}
+	
+	Soit P($x_0;y_0;z_0$) un point de la sphère. $\delta(C;P)=r \Leftrightarrow \| \overrightarrow{CP} \|=r $.
+	En utilisant le théorème de Pythagore on peut trouver l'égalité: \[ \sqrt{(x-x_0)^2+(y-y_0)^2+(z-z_0)^2}=r \] 
+	
+	Puis en élevant au carré cette expression: \[ (x-x_0)^2+(y-y_0)^2+(z-z_0)^2=r^2 \]
+	On obtient l'équation cartésienne de la sphère.
+	\pagebreak
+	
+	\section*{Plan tangent à la sphère}
+	\vspace{10cm}
+	Soit une sphère $\Sigma$ d'équation : $(x-2)^2+(y+1)^2+(z-3)^2=30$. Soit le plan $\pi$ passant par T $(1,4,5)$ et P de telle manière à ce que $\overrightarrow{CT}\cdot\overrightarrow{TP}$. Il sera question ici de trouver ce point P. 
+	\[CT=\left( \begin{array}{c}
+	-1 \\
+	5 \\
+	2
+	\end{array} \right) \hspace{1cm} TP=\left( \begin{array}{c}
+						x-1 \\
+						y-4 \\
+						z-5
+						\end{array} \right)\]
+	
+	Ce qui donne: $-(x-1)+5(y-4)+2(z-5)=0 \Leftrightarrow x-5y-2z+29=0$
+	Cette démarche pour trouver le plan tangent nous a fait chercher un point P qui n'appartient à la sphère pour et qui donne un produit scalaire nul, donc que les deux vecteurs sont perpendiculaires. 
+	
+\end{document}

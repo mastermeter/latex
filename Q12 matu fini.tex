@@ -1,0 +1,41 @@
+% !TeX spellcheck = fr_FR
+\documentclass[12pt,a4paper]{report}
+\usepackage{style/preambule_college}
+\usepackage{style/preambule_personnalisation}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\chapterFormat
+
+\begin{document}
+	\chapter[Géométrie dans l'espace]{Distance d'un point à un plan/à une droite}
+	\section*{Point-Plan}
+	\includegraphics{image/point_plan.png}
+	\vspace{1cm}
+	
+	Soit un plan: $\pi:ax+by+cz+d=0$ et le vecteur normal à ce plan: $\overrightarrow{n}
+	\left( \begin{array}{c}
+	a \\
+	b \\
+	c
+	\end{array} \right)$
+	puis un point $A(x_a;y_a;z_a) \in \pi$ et un point P quelconque $(x_p;y_p;z_p)$ $\Rightarrow \overrightarrow{AP}=
+	\left( \begin{array}{c}
+	x_p-x_a \\
+	y_p-y_a \\
+	z_p-z_a
+	\end{array} \right)$
+	\[  \delta(P;\pi) = \parallel \overrightarrow{AQ} \parallel =\dfrac{\mid \overrightarrow{AP}\cdot\overrightarrow{n} \mid}{\parallel\overrightarrow{n}\parallel}  \]
+	
+	En développant l'expression de droite cela donne: \[ \dfrac{\mid a(x_p-x_a)+b(y_a-y_p)+c(z_a-z_p) \mid}{\sqrt{a^2+b^2+c^2}} \Leftrightarrow  \dfrac{\mid ax_p+by_p +cz_p -(ax_a+by_a+cz_a) \mid}{\sqrt{a^2+b^2+c^2}}   \]
+	Or le point $A$ vérifie l'équation du plan $\pi$ donc $ax_a+by_a+cz_a = -d$ donc: \[ \delta(P;\pi)=\dfrac{\mid ax_p+by_p +cz_p+d \mid}{\sqrt{a^2+b^2+c^2}} \]
+	
+	\section*{Point-Droite}
+	
+	\includegraphics{image/point_droite.png}
+	\vspace{1cm}
+	
+	Soit une droite $d$ passant par $A$ de vecteur $\overrightarrow{d}$ et un point $P$ quelconque. L'air du parallélogramme délimité par $\overrightarrow{d}$ et $\overrightarrow{AP}$ peut se décrire de 2 manières. Soit: $\mathcal{A}=\parallel \overrightarrow{d}\parallel\cdot h$ ou $\mathcal{A}=\parallel \overrightarrow{d}\times\overrightarrow{AP}\parallel$.
+	
+	On peut ainsi facilement dégager $h$ en égalant les 2 expressions puis en isolant $h$, ce qui donne: \[ h=\delta(P;d)=\dfrac{\parallel \overrightarrow{AP}\times\overrightarrow{d}\parallel}{\parallel\overrightarrow{d}\parallel} \]
+\end{document}

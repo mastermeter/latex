@@ -1,0 +1,116 @@
+% !TeX spellcheck = fr_FR
+\documentclass[12pt,a4paper]{report}
+\usepackage{style/preambule_college}
+\usepackage{style/preambule_personnalisation}
+\usepackage{geometry}
+\usepackage{amsmath}
+\chapterFormat
+\newcommand*{\norme}[1]{\left\lVert{#1}\right\rVert}
+
+\begin{document}
+	\chapter[Géométrie de l'espace]{Produit vectoriel: définition,propriétés et applications}
+	\section*{Définition}
+	\vspace{10cm}
+	Le produit vectoriel de 2 vecteurs $\overrightarrow{u}$ et $\overrightarrow{v}$ c'est: \[ \overrightarrow{u}\times\overrightarrow{v}=\left( \begin{array}{c}
+	u_1 \\
+	u_2 \\
+	u_3
+	\end{array} \right) \times \left( \begin{array}{c}
+	v_1 \\
+	v_2 \\
+	v_3
+	\end{array} \right) = \left( \begin{array}{c}
+	u_2v_3-u_3v_2 \\
+	-(u_1v_3-u_3v_1) \\
+	u_1v_2-u_2v_1
+	\end{array} \right) \]
+	
+	Dans le cas d'un produit vectoriel avec 2 vecteurs, on peut calculer utiliser un "déterminant":
+	\[\begin{vmatrix}
+	e_1 & u_1 & v_1 \\
+	e_2 & u_2 & v_2 \\
+	e_3 & u_3 & v_3 
+	\end{vmatrix}\] 
+	Ce qui nous conduit au même résultat que précédemment. ($e_1,e_2,e_3$ sont les bases du repère orthonormé).
+	\section*{Propriétés}
+	
+	$\overrightarrow{a}\times\overrightarrow{b}$ orthogonal à $\overrightarrow{a}$ et à $\overrightarrow{b}$
+	\smallskip
+	
+	$\overrightarrow{a}\times\overrightarrow{b}=-\overrightarrow{b}\times\overrightarrow{a}$ (anti-commutative)
+	\smallskip
+	
+	$\overrightarrow{a}\times(\overrightarrow{b}+\overrightarrow{c})=\overrightarrow{a}\times\overrightarrow{b}+\overrightarrow{a}\times\overrightarrow{c}$ (distributivité)
+	\smallskip
+	
+	$(\lambda\overrightarrow{a})\times\overrightarrow{b}=\overrightarrow{a}\times\lambda\overrightarrow{b}=\lambda(\overrightarrow{a}\times\overrightarrow{b})$ pour tout $\lambda \in \mathbb{R}$ (homogénéité)
+	\smallskip
+	
+	Si $\overrightarrow{a}$ et $\overrightarrow{b}$ sont colinéaires, $\overrightarrow{a}\times\overrightarrow{b}=\overrightarrow{0}$
+	\smallskip
+	
+	$\|\overrightarrow{a}\times\overrightarrow{b}\|=$aire du parallélogramme construit sur $\overrightarrow{a}$  et $\overrightarrow{b}$
+	
+	\section*{Application} 
+	
+	$ \mathcal{A} = \parallel \overrightarrow{u} \parallel \cdot \parallel \overrightarrow{v} \parallel \sin(\theta) $
+	\medskip
+	
+	$\quad= \sqrt{ \parallel \overrightarrow{u} \parallel^2 \cdot \parallel \overrightarrow{v} \parallel^2 \sin(\theta)^2} $
+	\medskip
+	
+	$\quad= \sqrt{ \parallel \overrightarrow{u} \parallel^2 \cdot \parallel \overrightarrow{v} \parallel^2 - \parallel \overrightarrow{u} \parallel^2 \cdot \parallel \overrightarrow{v} \parallel^2 cos(\theta)^2 } $
+	\medskip
+	
+	$\quad= \sqrt{\norme{\left( \begin{array}{c}
+		u_1 \\
+		u_2 \\
+		u_3
+		\end{array} \right)}^2\norme{\left( \begin{array}{c}
+		v_1 \\
+		v_2 \\
+		v_3
+		\end{array} \right)}^2  - \left(\left( \begin{array}{c}
+		u_1 \\
+		u_2 \\
+		u_3
+		\end{array} \right) \cdot \left( \begin{array}{c}
+		v_1 \\
+		v_2 \\
+		v_3
+		\end{array} \right)\right)^2} $
+	\medskip
+	
+	$\quad= \sqrt{(u_1^{2}+u_2^2+u_3^2)(v_1^2+v_2^2+v_3^2)-(u_1^2v_1^2+u_2^2v_2^2+u_3^2+v_3^2)} $
+	\medskip
+	
+	$\quad=\sqrt{u_1^2v_2^2+u_1^2v_3^2+u_2^2v_1^2+u_2^2v_3^2+u_3^2v_1^2+u_3^2v_2^2 -2u_1u_2v_1v_2-2u_1u_3v_1v_3-2u_2u_3v_2v_3}$
+	\medskip
+	
+	or $\norme{\overrightarrow{u}\times\overleftrightarrow{v}}=\norme{ \left( \begin{array}{c}
+		u_2v_3-u_3v_2 \\
+		-(u_1v_3-u_3v_1) \\
+		u_1v_2-u_2v_1
+		\end{array} \right)}=\uparrow$
+	
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+\end{document}

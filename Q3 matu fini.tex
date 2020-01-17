@@ -1,0 +1,46 @@
+% !TeX spellcheck = fr_FR
+\documentclass[12pt,a4paper]{report}
+\usepackage{style/preambule_college}
+\usepackage{style/preambule_personnalisation}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\chapterFormat
+
+
+\begin{document}
+	
+	\chapter[Analyse]{Logarithme naturel}
+	\section*{Définition}
+	La fonction est définie de $\mathbb{R}^*_{+} \rightarrow \mathbb{R}$.
+	
+	Elle est une bijection entre ses 2 ensembles.
+	La fonction ln
+	\section*{Graphe}
+	\begin{tikzpicture}
+	\begin{axis}[
+		xscale=1,yscale=1,
+		xmin=-1, xmax=10,
+		ymin=-4, ymax=4,
+		samples=1000,
+		axis lines=center,
+		]
+		\addplot+[domain=0:10,mark=none,blue] {ln(x)};
+	\end{axis}
+	\end{tikzpicture}
+	\section*{Dérivée de $\ln(x)$}
+	\begin{align*}
+	(\ln(x))' &= \lim\limits_{h \rightarrow 0} \dfrac{\ln(x+h) - \ln(x)}{h} \\
+	&= \lim\limits_{h \rightarrow 0} \dfrac{\ln\left(\frac{x+h}{x}\right)}{h} \\
+	&= \lim\limits_{h \rightarrow 0} \dfrac{\ln\left(1+\frac{h}{x}\right)}{h} \\
+	&= \lim\limits_{h \rightarrow 0} \frac{\color{blue}x}{\color{blue}x} \cdot \dfrac{\ln\left(1+\frac{h}{x}\right)}{h} \\
+	&= \lim\limits_{h \rightarrow 0} \frac{1}{\color{blue}x} \cdot \ln\left(1+\frac{h}{x}\right)^{\frac{\color{blue}x}{h}}
+	\end{align*}
+	Or si $h \rightarrow 0$ alors $ \frac{x}{h} \rightarrow +\infty$ et $ \frac{h}{x} \rightarrow 0$. On en revient donc à la définition du nombre $e$. Il ne reste donc plus que $\frac{1}{x}$.
+	\begin{align*}
+	&= \dfrac{1}{\color{blue}x}\cdot\ln(e) \\
+	&= \dfrac{1}{x}
+	\end{align*}
+\end{document}
